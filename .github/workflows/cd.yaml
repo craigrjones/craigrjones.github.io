@@ -12,7 +12,7 @@ jobs:
         build-and-deploy-site:
                 runs-on: ubuntu-latest
                 steps:
-                        - name: Checkout reop
+                        - name: Checkout repo
                           uses: actions/checkout@v2
                           with:
                                   submodules: true
@@ -30,8 +30,9 @@ jobs:
                           uses: chabad360/htmlproofer@master
                           with:
                                   directory: "./public"
-                                  arguments: --only-4xx --check-favicon --check-html --assume-extension
-                                  continue-on-error: true
+                                  arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
+                                  #continue-on-error: true
+                                  
 
                         - name: Deploy to Github Pages
                           if: github.event_name == 'push' && github.ref == 'refs/heads/main'
