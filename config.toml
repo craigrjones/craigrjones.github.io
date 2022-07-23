@@ -1,0 +1,9 @@
+baseURL = "https://craigrjones.github.io/"
+languageCode = "en-gb"
+theme = "anatole"
+enableEmoji = true
+
+
+[params]
+title = "Craig Jones"
+description = "Automatic blog from a Github bot"
